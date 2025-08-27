@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Galería Pieles RODRIGO MORI</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Iconos Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="css/estilo.css"/>
+</head>
+<body>
+  <header>
+    <img src="images/merged.gif" alt="Logo Pieles Rodrigo Mori" class="logo-sofycomtech">
+    <h2>Inspirados para brindar elegancia y calidad</h2>
+    <nav class="header-icons">
+      <a href="#" class="header-icon-link" id="contacto-btn"><i class="fas fa-envelope"></i>Contacto</a>
+      <a href="https://facebook.com/" class="header-icon-link" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
+      <a href="https://instagram.com/" class="header-icon-link" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+      <a href="https://wa.me/XXXXXXXXXXX" class="header-icon-link" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+    </nav>
+  </header>
+
+  <!-- Popup de contacto -->
+  <div class="contact-popup-bg" id="contact-popup-bg">
+    <form class="contact-popup" id="contact-form" action="https://formspree.io/f/tu_codigo_formspree" method="POST">
+      <button type="button" class="close-btn" onclick="closeContactPopup()">&times;</button>
+      <h2>Contáctanos</h2>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" maxlength="40" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" maxlength="60" required>
+      <label for="comentarios">Comentarios</label>
+      <textarea id="comentarios" name="comentarios" maxlength="500" required></textarea>
+      <button type="submit">Enviar</button>
+      <div class="contact-success" id="contact-success" style="display:none;">¡Mensaje enviado con éxito!</div>
+    </form>
+  </div>
+
+  <!-- Galería interactiva -->
+  <div class="gallery-container">
+    <div class="marquee-gallery">
+      <div class="gallery-item" data-popup="foto1">
+        <img src="images/ast0101.jpg" class="gallery-img" alt="Abrigo Astracan">
+        <div class="desc-label">Modelo Astracan</div>
+      </div>
+      <div class="gallery-item" data-popup="foto2">
+        <img src="images/vis0301.jpg" class="gallery-img" alt="Abrigo Vison">
+        <div class="desc-label">Modelo Visón</div>
+      </div>
+      <div class="gallery-item" data-popup="foto3">
+        <img src="images/zor0101.jpg" class="gallery-img" alt="Abrigo Zorro rojo">
+        <div class="desc-label">Modelo Zorro</div>
+      </div>
+	   <div class="gallery-item" data-popup="foto4">
+        <img src="images/cab0101.jpg" class="gallery-img" alt="Abrigo Zorro rojo">
+        <div class="desc-label">Modelo Cabrito</div>
+      </div>
+	   <div class="gallery-item" data-popup="foto5">
+        <img src="images/zor0601.jpg" class="gallery-img" alt="Abrigo Zorro rojo">
+        <div class="desc-label">Modelo Zorro Capucha</div>
+      </div>
+      <!-- Agrega más items según necesites -->
+    </div>
+  </div>
+
+  <!-- Popups para cada imagen -->
+  <div class="popup" id="popup-foto1">
+    <div class="popup-content">
+      <button class="popup-close" onclick="closePopup()">&times;</button>
+      <div class="popup-gallery">
+        <img src="images/ast0102.jpg" alt="Vista lateral">
+        <img src="images/ast0103.jpg" alt="Vista trasera">
+        <img src="images/ast0104.jpg" alt="Forro">
+      </div>
+      <div class="popup-label">Astracan: Abrigo medio cuerpo</div>
+    </div>
+  </div>
+  <div class="popup" id="popup-foto2">
+    <div class="popup-content">
+      <button class="popup-close" onclick="closePopup()">&times;</button>
+      <div class="popup-gallery">
+        <img src="images/vis0302.jpg" alt="Vista lateral">
+        <img src="images/vis0303.jpg" alt="Vista trasera">
+        <img src="images/vis0304.jpg" alt="Forro">
+      </div>
+      <div class="popup-label">Visón : Sofisticado modelo transformable (3 cortes)</div>
+    </div>
+  </div>
+  <div class="popup" id="popup-foto3">
+    <div class="popup-content">
+      <button class="popup-close" onclick="closePopup()">&times;</button>
+      <div class="popup-gallery">
+        <img src="images/zor0102.jpg" alt="Vista lateral">
+        <img src="images/zor0103.jpg" alt="Vista trasera">
+        <img src="images/zor0104.jpg" alt="Forro">
+      </div>
+      <div class="popup-label">Zorro : Elegante abrigo medio cuerpo</div>
+    </div>
+  </div>
+  <div class="popup" id="popup-foto4">
+    <div class="popup-content">
+      <button class="popup-close" onclick="closePopup()">&times;</button>
+      <div class="popup-gallery">
+        <img src="images/cab0102.jpg" alt="Vista lateral">
+        <img src="images/cab0103.jpg" alt="Vista trasera">
+        <img src="images/cab0104.jpg" alt="Forro">
+      </div>
+      <div class="popup-label">Cabrito : Abrigo largo</div>
+    </div>
+  </div>
+  <div class="popup" id="popup-foto5">
+    <div class="popup-content">
+      <button class="popup-close" onclick="closePopup()">&times;</button>
+      <div class="popup-gallery">
+        <img src="images/zor0602.jpg" alt="Vista lateral">
+        <img src="images/zor0603.jpg" alt="Vista trasera">
+        <img src="images/zor0604.jpg" alt="Forro">
+      </div>
+      <div class="popup-label">Zorro : Abrigo 3/4 cuerpo con capucha</div>
+    </div>
+  </div>
+  <div class="comentario-general">
+  <p>
+    <strong>Rodrigo Mori</strong> pone a tu disposición abrigos de piel genuinos y confeccionados pensando en clientes exigentes, además de sometidos a un riguroso testeo de calidad.
+  </p>
+</div>
+  <footer>
+    Copyright Sofycomtech 2025
+  </footer>
+
+  <script>
+    // Abrir popup de contacto
+    document.getElementById('contacto-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('contact-popup-bg').classList.add('active');
+    });
+    // Cerrar popup de contacto
+    function closeContactPopup() {
+      document.getElementById('contact-popup-bg').classList.remove('active');
+      document.getElementById('contact-success').style.display = 'none';
+      document.getElementById('contact-form').reset();
+    }
+    // Cerrar popup al hacer click fuera del formulario
+    document.getElementById('contact-popup-bg').addEventListener('click', function(e) {
+      if (e.target === this) closeContactPopup();
+    });
+    // Envío del formulario con mensaje de éxito (Formspree)
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = this;
+      var data = new FormData(form);
+      fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          document.getElementById('contact-success').style.display = 'block';
+          form.reset();
+        } else {
+          alert('Error al enviar el mensaje. Intenta nuevamente.');
+        }
+      }).catch(error => {
+        alert('Error al enviar el mensaje. Intenta nuevamente.');
+      });
+    });
+
+    // Galería interactiva
+    // --- Manejo de popups de galería sin parpadeo ---
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('mouseenter', function() {
+    if(window.innerWidth > 900) {
+      const popupId = 'popup-' + this.dataset.popup;
+      document.getElementById(popupId).classList.add('active');
+    }
+  });
+  item.addEventListener('mouseleave', function() {
+    if(window.innerWidth > 900) {
+      const popupId = 'popup-' + this.dataset.popup;
+      // Espera un poco para ver si el mouse entra al popup
+      setTimeout(() => {
+        if (!document.getElementById(popupId).matches(':hover')) {
+          document.getElementById(popupId).classList.remove('active');
+        }
+      }, 100);
+    }
+  });
+  // Para móviles: abrir popup al tocar
+  item.addEventListener('click', function() {
+    if(window.innerWidth <= 900) {
+      closePopup();
+      const popupId = 'popup-' + this.dataset.popup;
+      document.getElementById(popupId).classList.add('active');
+    }
+  });
+});
+
+// Cerrar popup galería solo cuando el mouse sale del popup también
+document.querySelectorAll('.popup').forEach(popup => {
+  popup.addEventListener('mouseleave', function() {
+    if(window.innerWidth > 900) {
+      setTimeout(() => {
+        if (!popup.matches(':hover')) {
+          popup.classList.remove('active');
+        }
+      }, 100);
+    }
+  });
+  popup.addEventListener('click', function(e) {
+    if (e.target === popup) closePopup();
+  });
+});
+
+// Para móviles: cerrar popup al tocar fuera del contenido
+document.querySelectorAll('.popup-content').forEach(content => {
+  content.addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
+});
+
+function closePopup() {
+  document.querySelectorAll('.popup').forEach(p => p.classList.remove('active'));
+}
+  </script>
+</body>
+</html>

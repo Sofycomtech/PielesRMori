@@ -1,0 +1,326 @@
+body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #333;
+      background:
+        linear-gradient(rgba(255,255,255,0.4), rgba(227,230,243,0.4)),
+        url('images/fondo-body.avif') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    /* Header con textura y color armónico */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px 16px 40px;
+      background:
+        repeating-linear-gradient(135deg, #f8e8ef 0px, #f8e8ef 8px, #e3e6f3 8px, #e3e6f3 16px),
+        linear-gradient(90deg, #f8e8ef 0%, #e3e6f3 100%);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border-bottom: 2px solid #b8002e22;
+      position: relative;
+    }
+    .logo-sofycomtech {
+      width: 90px;
+      height: auto;
+      margin-right: 24px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1em;
+      color: #0043b8;
+      margin: 0 0 0 12px;
+      letter-spacing: 2px;
+      flex: 1;
+    }
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-icon-link {
+      display: flex;
+      align-items: center;
+      color: #b8002e;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05em;
+      transition: color 0.2s;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+    .header-icon-link:hover {
+      background: #e3e6f3;
+      color: #fff;
+      background: linear-gradient(90deg, #b8002e 0%, #e3e6f3 100%);
+    }
+    .header-icon-link i {
+      font-size: 1.2em;
+    }
+    /* Popup de contacto */
+    .contact-popup-bg {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.45);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+    .contact-popup-bg.active {
+      display: flex;
+    }
+    .contact-popup {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px 24px 24px 24px;
+      box-shadow: 0 8px 40px rgba(184,0,46,0.18);
+      max-width: 400px;
+      width: 90vw;
+      position: relative;
+      animation: popupIn 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .contact-popup h2 {
+      font-family: 'Playfair Display', serif;
+      color: #b8002e;
+      margin-top: 0;
+      margin-bottom: 18px;
+      text-align: center;
+      font-size: 1.3em;
+    }
+    .contact-popup label {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #b8002e;
+      font-size: 1em;
+    }
+    .contact-popup input, .contact-popup textarea {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1em;
+      padding: 8px;
+      margin-bottom: 14px;
+      border: 1px solid #e3e6f3;
+      border-radius: 6px;
+      background: #f8fafc;
+      resize: vertical;
+    }
+    .contact-popup textarea {
+      min-height: 60px;
+      max-height: 180px;
+    }
+    .contact-popup button[type="submit"] {
+      background: linear-gradient(90deg, #b8002e 0%, #e3e6f3 100%);
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 0;
+      font-size: 1.1em;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    .contact-popup button[type="submit"]:hover {
+      background: linear-gradient(90deg, #e3e6f3 0%, #b8002e 100%);
+      color: #b8002e;
+    }
+    .contact-popup .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 16px;
+      font-size: 1.6em;
+      color: #b8002e;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .contact-success {
+      color: #2e8b57;
+      text-align: center;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+    /* Galería */
+    .gallery-container {
+      margin: 40px auto;
+      max-width: 1100px;
+      padding: 0 20px;
+      flex: 1;
+    }
+    .marquee-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 32px;
+      padding-bottom: 20px;
+      scrollbar-width: thin;
+      scrollbar-color: #b8002e #e3e6f3;
+    }
+    .gallery-item {
+      position: relative;
+      min-width: 220px;
+      max-width: 220px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(184,0,46,0.08);
+      background: #fff;
+      transition: transform 0.2s;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .gallery-item:hover {
+      transform: scale(1.04);
+      z-index: 2;
+    }
+    .gallery-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+    .desc-label {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(184,0,46,0.85);
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1em;
+      padding: 8px 0;
+      text-align: center;
+      letter-spacing: 1px;
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+    /* Popup galería */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.45);
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    .popup.active {
+      display: flex;
+    }
+    .popup-content {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px 24px 24px 24px;
+      box-shadow: 0 8px 40px rgba(184,0,46,0.18);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 700px;
+      width: 90vw;
+      position: relative;
+      animation: popupIn 0.3s;
+    }
+    @keyframes popupIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .popup-close {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      font-size: 1.8em;
+      color: #b8002e;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .popup-gallery {
+      display: flex;
+      gap: 18px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .popup-gallery img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(184,0,46,0.08);
+    }
+    .popup-label {
+      margin-top: 18px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.1em;
+      color: #b8002e;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    /* Footer */
+    footer {
+      background: #b8002e;
+      color: #fff;
+      text-align: center;
+      padding: 16px 0 12px 0;
+      font-size: 1em;
+      letter-spacing: 1px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin-top: 40px;
+    }
+    /* Responsividad */
+    @media (max-width: 900px) {
+      .gallery-container { max-width: 98vw; }
+      .gallery-item, .gallery-img { min-width: 160px; max-width: 160px; height: 180px; }
+      .gallery-img { height: 180px; }
+      .popup-gallery img { width: 100px; height: 100px; }
+      .popup-content { padding: 18px 6px 12px 6px; }
+    }
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 10px 10px 10px;
+      }
+      .logo-sofycomtech {
+        margin-bottom: 8px;
+        margin-right: 0;
+        width: 60px;
+      }
+      h1 {
+        font-size: 1.1em;
+        margin: 0 0 8px 0;
+      }
+      .header-icons {
+        gap: 10px;
+      }
+      .gallery-item, .gallery-img { min-width: 110px; max-width: 110px; height: 90px; }
+      .gallery-img { height: 90px; }
+      .desc-label { font-size: 0.8em; padding: 5px 0; }
+      .popup-gallery img { width: 60px; height: 60px; }
+      .popup-content { padding: 8px 2px 8px 2px; }
+      footer { font-size: 0.9em; }
+    }
+	.comentario-general {
+     max-width: 700px;
+     margin: 40px auto 0 auto;
+     background: rgba(227,230,243,0.85);
+     border-radius: 22px;
+     box-shadow: 0 4px 24px rgba(184,0,46,0.08);
+     padding: 28px 32px;
+     font-size: 1.18em;
+     color: #b8002e;
+     font-family: 'Montserrat', Arial, sans-serif;
+     text-align: center;
+     letter-spacing: 0.5px;
+    }
+    @media (max-width: 700px) {
+    .comentario-general {
+    padding: 18px 10px;
+    font-size: 1em;
+    }
+}
